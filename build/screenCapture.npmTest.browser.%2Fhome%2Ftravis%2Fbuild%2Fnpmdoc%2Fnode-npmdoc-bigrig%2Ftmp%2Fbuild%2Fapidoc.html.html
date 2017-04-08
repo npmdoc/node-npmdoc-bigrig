@@ -1,0 +1,431 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/GoogleChrome/node-big-rig#readme">bigrig (v1.3.0)</a>
+</h1>
+<h4>A CLI and node module for parsing trace (timeline) files from Chrome.</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bigrig">module bigrig</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bigrig.analyze">
+            function <span class="apidocSignatureSpan">bigrig.</span>analyze
+            <span class="apidocSignatureSpan">(traceContents, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bigrig.</span>global_config</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">bigrig.</span>processor</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bigrig.</span>ANIMATION</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bigrig.</span>LOAD</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bigrig.</span>RESPONSE</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bigrig.global_config">module bigrig.global_config</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bigrig.global_config.disable">
+            function <span class="apidocSignatureSpan">bigrig.global_config.</span>disable
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bigrig.global_config.enable">
+            function <span class="apidocSignatureSpan">bigrig.global_config.</span>enable
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.bigrig.processor">module bigrig.processor</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.bigrig.processor.analyzeTrace">
+            function <span class="apidocSignatureSpan">bigrig.processor.</span>analyzeTrace
+            <span class="apidocSignatureSpan">(contents, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bigrig.processor.</span>ANIMATION</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bigrig.processor.</span>LOAD</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">bigrig.processor.</span>RESPONSE</span>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bigrig" id="apidoc.module.bigrig">module bigrig</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bigrig.analyze" id="apidoc.element.bigrig.analyze">
+        function <span class="apidocSignatureSpan">bigrig.</span>analyze
+        <span class="apidocSignatureSpan">(traceContents, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">analyze = function (traceContents, opts) {
+  return processor.analyzeTrace(traceContents, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var fs = require('fs');
+
+// Read trace file contents.
+fs.readFile('/path/to/trace.json', 'utf8', function(err, data) {
+  if (err)
+    throw err;
+
+  results = bigrig.<span class="apidocCodeKeywordSpan">analyze</span>(data);
+
+  // Now do something with the results, like
+  // post to a dashboard.
+});
+
+```
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bigrig.global_config" id="apidoc.module.bigrig.global_config">module bigrig.global_config</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bigrig.global_config.disable" id="apidoc.element.bigrig.global_config.disable">
+        function <span class="apidocSignatureSpan">bigrig.global_config.</span>disable
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function disable() {
+
+  delete global.Polymer.elements;
+  delete global.Polymer;
+
+  delete global.HTMLUnknownElement;
+  delete global.HTMLDivElement;
+  delete global.document;
+
+  delete global.vec2;
+  delete global.vec3;
+  delete global.vec4;
+  delete global.mat2d;
+  delete global.mat4;
+  delete global.window;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  console.log('\nProceeding using the last named tab:' + bullet,
+      summarizable[0].labels[0]);
+}
+
+traceProcess = summarizable.pop();
+// Reset all the globals we had to define for window etc.
+globalConfig.<span class="apidocCodeKeywordSpan">disable</span>();
+return processTrace(model, traceProcess, opts);
+}
+
+function convertEventsToModel (events) {
+
+require('./third_party/tracing/importer/import.js');
+require('./third_party/tracing/extras/importer/trace_event_importer.js');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.bigrig.global_config.enable" id="apidoc.element.bigrig.global_config.enable">
+        function <span class="apidocSignatureSpan">bigrig.global_config.</span>enable
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function enable() {
+  // Sets some global options so that the trace viewer code can work.
+  // It expects to be run inside of a browser, where host objects
+  // (and Polymer) exist. Since they don't they need stubbing out.
+  global.Polymer = function () {};
+  global.Polymer.elements = {};
+
+  global.HTMLUnknownElement = {};
+  global.HTMLDivElement = {};
+  global.document = {
+    currentScript: {
+      ownerDocument: {}
+    },
+
+    createElement: function () {
+      return {
+        style: {
+
+        }
+      };
+    }
+  };
+
+  global.vec2 = {create: function () {}, set: function () {}};
+  global.vec3 = {create: function () {}};
+  global.vec4 = {create: function () {}};
+  global.mat2d = {create: function () {}};
+  global.mat4 = {create: function () {}};
+  global.window = {
+    performance: {
+      now: function () {
+        return Date.now();
+      }
+    }, webkitRequestAnimationFrame: function (cb) {
+      cb();
+    }, requestAnimationFrame: function (cb) {
+      cb();
+    }
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}
+
+var events = [JSON.stringify({
+  traceEvents: contentsJSON
+})];
+
+// Switch on all the globals we need, and import tracing.
+globalConfig.<span class="apidocCodeKeywordSpan">enable</span>();
+
+var model = convertEventsToModel(events);
+var processes = model.getAllProcesses();
+var traceProcess = null;
+var summarizable = [];
+
+for (var p = 0; p &lt; processes.length; p++) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.bigrig.processor" id="apidoc.module.bigrig.processor">module bigrig.processor</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.bigrig.processor.analyzeTrace" id="apidoc.element.bigrig.processor.analyzeTrace">
+        function <span class="apidocSignatureSpan">bigrig.processor.</span>analyzeTrace
+        <span class="apidocSignatureSpan">(contents, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function analyzeTrace(contents, opts) {
+
+  var contentsJSON = null;
+
+  try {
+    contentsJSON = JSON.parse(contents);
+
+    // If the file already wrapped the trace events in a
+    // traceEvents object, grab the contents of the object.
+    if (contentsJSON !== null &amp;&amp;
+      typeof contentsJSON.traceEvents !== 'undefined') {
+      contentsJSON = contentsJSON.traceEvents;
+    }
+
+  } catch (e) {
+    throw 'Invalid trace contents; not JSON';
+  }
+
+  var events = [JSON.stringify({
+    traceEvents: contentsJSON
+  })];
+
+  // Switch on all the globals we need, and import tracing.
+  globalConfig.enable();
+
+  var model = convertEventsToModel(events);
+  var processes = model.getAllProcesses();
+  var traceProcess = null;
+  var summarizable = [];
+
+  for (var p = 0; p &lt; processes.length; p++) {
+    var candidate = processes[p];
+
+    if (typeof candidate.labels !== 'undefined' &amp;&amp;
+        candidate.labels.length &gt; 0 &amp;&amp;
+        candidate.labels[0] !== 'chrome://tracing' &amp;&amp;
+        candidate.labels[0] !== 'BackgroundPage') {
+      summarizable.push(candidate);
+    }
+
+    if (typeof candidate.labels !== 'undefined' &amp;&amp;
+        candidate.labels[0] === 'BackgroundPage') {
+
+      var error = 'Extensions running during capture; ' +
+                  'see http://bit.ly/bigrig-extensions';
+      if (typeof opts !== 'undefined' &amp;&amp; opts.strict) {
+        throw error;
+      }
+    }
+  }
+
+  if (summarizable.length === 0) {
+    throw 'Zero processes (tabs) found.';
+  }
+
+  if (summarizable.length &gt; 1) {
+    var bullet = '\n  * ';
+    var tabs = summarizable
+        .map(pr =&gt; pr.labels[0])
+        .map(l =&gt; l.trim()).join(bullet);
+
+    console.warn('Multiple processes (tabs) found:' + bullet, tabs);
+
+    summarizable = summarizable
+        .filter(pr =&gt; !!pr.labels[0])
+        .slice(-1);
+
+    console.log('\nProceeding using the last named tab:' + bullet,
+        summarizable[0].labels[0]);
+  }
+
+  traceProcess = summarizable.pop();
+  // Reset all the globals we had to define for window etc.
+  globalConfig.disable();
+  return processTrace(model, traceProcess, opts);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+module.exports = {
+
+  RESPONSE: processor.RESPONSE,
+  ANIMATION: processor.ANIMATION,
+  LOAD: processor.LOAD,
+
+  analyze: function (traceContents, opts) {
+    return processor.<span class="apidocCodeKeywordSpan">analyzeTrace</span>(traceContents, opts);
+  }
+};
+...</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
