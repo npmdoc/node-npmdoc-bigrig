@@ -1,7 +1,7 @@
 {
     "author": "kai zhu <kaizhu256@gmail.com>",
     "buildNpmdoc": "bigrig",
-    "description": "api documentation for [bigrig (v1.3.0)](https://github.com/GoogleChrome/node-big-rig#readme) [![npm package](https://img.shields.io/npm/v/npmdoc-bigrig.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-bigrig) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-bigrig.svg)](https://travis-ci.org/npmdoc/node-npmdoc-bigrig)",
+    "description": "#### basic api documentation for  [bigrig (v1.3.0)](https://github.com/GoogleChrome/node-big-rig#readme)  [![npm package](https://img.shields.io/npm/v/npmdoc-bigrig.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-bigrig) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-bigrig.svg)](https://travis-ci.org/npmdoc/node-npmdoc-bigrig)",
     "devDependencies": {
         "bigrig": "*",
         "electron-lite": "kaizhu256/node-electron-lite#alpha",
