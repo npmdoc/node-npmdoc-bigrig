@@ -400,16 +400,21 @@ for (var p = 0; p &lt; processes.length; p++) {
   return processTrace(model, traceProcess, opts);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-module.exports = {
-
-  RESPONSE: processor.RESPONSE,
-  ANIMATION: processor.ANIMATION,
-  LOAD: processor.LOAD,
-
-  analyze: function (traceContents, opts) {
-    return processor.<span class="apidocCodeKeywordSpan">analyzeTrace</span>(traceContents, opts);
   }
-};
+});
+}
+
+function processContents (contents) {
+
+// Read the file, analyze, and print.
+var results = processor.<span class="apidocCodeKeywordSpan">analyzeTrace</span>(contents, {
+  strict: argv.strict
+});
+
+if (argv['pretty-print']) {
+  prettyPrint(results);
+} else {
+  console.log(JSON.stringify(results));
 ...</pre></li>
     </ul>
 
